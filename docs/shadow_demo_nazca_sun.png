@@ -1,1 +1,12 @@
 
+# Example: Nazca region on 2025-09-21 (UTC)
+python shadow/shadow.py \
+  --lat -14.7 --lon -75.1 \
+  --date 2025-09-21 \
+  --from-hour 12 --to-hour 22 \
+  --step-min 5 \
+  --height-m 1.5 \
+  --temp-c 30 --temp-grad -0.15 --mirage-layer-m 2.5 --mirage-coeff 0.02 \
+  --baseline-m 1200 \
+  --out-csv shadow/docs/shadow_demo_nazca.csv \
+  --out-png shadow/docs/shadow_demo_nazca.png
