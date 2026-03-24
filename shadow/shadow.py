@@ -20,14 +20,15 @@ from typing import List, Tuple, Optional
 # -------------------------------
 
 def _julian_day(dt_utc: datetime) -> float:
+    """Convert a UTC datetime to Julian Day Number (NOAA method)."""
     y, m = dt_utc.year, dt_utc.month
-    D = dt_utc.day + (dt_utc.hour + dt_utc.minute/60 + dt_utc.second/3600)/24.0
+    day_frac = dt_utc.day + (dt_utc.hour + dt_utc.minute / 60 + dt_utc.second / 3600) / 24.0
     if m <= 2:
-        y -= 1; m += 12
-    A = y // 100
-    B = 2 - A + A // 4
-    jd = int(365.25*(y + 4716)) + int(30.6001*(m + 1)) + D + B - 1524.5
-    return jd
+        y -= 1
+        m += 12
+    a = y // 100
+    b = 2 - a + a // 4
+    return int(365.25 * (y + 4716)) + int(30.6001 * (m + 1)) + day_frac + b - 1524.5
 
 def solar_position(lat_deg: float, lon_deg: float, dt_utc: datetime) -> Tuple[float,float]:
     """Return (azimuth_deg_from_north, altitude_deg)."""
