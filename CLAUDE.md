@@ -8,6 +8,8 @@ A symbolic-physics framework for shadow projection, curvature detection, and mir
 shadow/
   __init__.py          # Package init, re-exports public API
   shadow.py            # Core physics: solar position, refraction, mirage, curvature, shadow sim
+examples/
+  example_shadow_study.py  # Starter script — edit CONFIGURATION section for your own study
 docs/
   shadow_demo.csv      # Sample output (Nazca, equinox 2025-09-21)
   shadow_demo_nazca_sun.png  # Sun elevation plot
@@ -43,6 +45,9 @@ python -m shadow.shadow \
   --from-hour 12 --to-hour 22 --step-min 5 \
   --height-m 1.5 --baseline-m 1000 \
   --out-csv shadow_sim.csv --out-png shadow_sim.png
+
+# Run the example script (edit the CONFIGURATION section for your location)
+python examples/example_shadow_study.py
 
 # Run tests
 python -m pytest tests/ -v
