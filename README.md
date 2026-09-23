@@ -113,4 +113,4 @@ Shadow is treated as a mirror of form in the symbolic intelligence system:
 
 ## License
 
-Open-source under MIT.
+Open-source under CC0-1.0.
